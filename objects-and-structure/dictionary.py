@@ -27,7 +27,7 @@ student_list = {
         "sehir": "Ankara"
     }
 }
-print
+
 for student in student_list:
     print(student, student_list[student]["isim"],end=", ")
 # Tüm bilgilere erişme
@@ -62,5 +62,3 @@ for student, student_list in student_list.items():
     print(f"{student}: {student_list}")
     
    
-    degisken = 4
-degisken*degisken
