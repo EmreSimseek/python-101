@@ -32,19 +32,30 @@ def main():
         choice = input("Choose an option: ")
     
         match choice:
-            case 1: show_products()
-            case 2: add_product(name,price,stok)
-            case 3: add_to_cart()
-            case 4: show_cart()
-            case 5: checkout()
-            case 6: show_order_history()
-            case 7: return False
-            case _: print("Invalid number")
+            case 1: 
+                show_products()
+            case 2:
+                name = str(input("Enter product name:"))
+                price = float(input("Enter product price:"))
+                stock = int(input("Enter product stock:"))
+                add_product(name,price,stock)
+            case 3: 
+                add_to_cart()
+            case 4: 
+                show_cart()
+            case 5: 
+                checkout()
+            case 6: 
+                show_order_history()
+            case 7: 
+                return False
+            case _: 
+                print("Invalid number")
                  
                 
                    
-    show_products()
-    add_product("Router",120,5)
+    
+    
     
     
     
