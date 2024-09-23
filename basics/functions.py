@@ -18,18 +18,7 @@ def flexible_function(*args,**kwargs):
 
 flexible_function(1,2,3,"emre",False,name="alice",age=30) 
 
-def sum_numbers(*args):
-    total = 0
-    for num in args:
-        total += num
-    return total
-#print(sum_numbers(1, 2, 3))  # 6
-def print_person_details(**kwargs):
-    for key, value in kwargs.items():
-        print(f"{key}: {value}")
 
-#Different key-value pairs are sent to the function 
-#print_person_details(name="Alice", age=30, city="New York")
 
 #4 Nested Functions
 def outer_function(text):
