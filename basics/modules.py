@@ -19,4 +19,10 @@ print(functions.basic_function())
 
 #3 Modules Loading Order and Path
 import sys
-print(sys.path)
+print(sys.path) 
+'''This list contains the following:
+The directory of the currently running Python script.
+Python's standard library directories.
+Additional paths specified by Python's PYTHONPATH environment variable.
+'''
+
