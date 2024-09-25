@@ -1,4 +1,4 @@
-#Local Variables
+#1 Local Variables
 def my_function():
     x=10
     print(f"Local x:{x}")
@@ -6,7 +6,7 @@ def my_function():
 my_function()
 #print(x)  NameError: name 'x' is not defined       
 
-#Global Variable
+#2 Global Variable
 y=20
 def my_function2():
     
@@ -17,7 +17,7 @@ def my_function2():
 my_function2()
 print(f"Global y is out:{y}")   
 
-#Global and Local Variable with Same Name in Function
+#3 Global and Local Variable with Same Name in Function
 b = 50 
 def my_function():
     b = 10  
@@ -26,7 +26,7 @@ def my_function():
 my_function()  # b:10
 print(f"Global b: {b}")  # b:50
 
-#Global and Nonlocal Difference
+#4 Global and Nonlocal Difference
 def outer_function():
     x = "outer"
 
