@@ -1,10 +1,10 @@
-# Basic Use
+#1 Basic Use
 def greet():
     return "Hello World"
 message = greet()
 print(message)
 
-# Returning a Value from a Function
+#2 Returning a Value from a Function
 def get_even_numbers(n):
     even_numbers = []
     for i in range(n):
@@ -13,7 +13,7 @@ def get_even_numbers(n):
     return even_numbers
 print(get_even_numbers(5))
 
-# Returning More Than One Value from a Function
+#3 Returning More Than One Value from a Function
 def get_full_name():
     first_name = "Lionel"
     last_name =   "Messi"
@@ -23,7 +23,7 @@ fname,lname = get_full_name()
 print(f"First Name: {fname}")  
 print(f"Last Name: {lname}")
 
-# Stop Function Operation
+#4 Stop Function Operation
 def process_data(data):
     if not data:
         print("No data provided.")
@@ -33,14 +33,14 @@ def process_data(data):
 process_data([])
 process_data([1,2,3])
 
-# Functions that Return No Value
+#5 Functions that Return No Value
 def say_hello(name):
     print(f"Hello, {name}")
 
 result = say_hello("Emre")
 print(result)  #None   
 
-# Return and Loops
+#6 Return and Loops
 def find_first_even(numbers):
     for num in numbers:
         if num % 2 ==0:
@@ -50,7 +50,7 @@ def find_first_even(numbers):
 print(find_first_even([1, 3, 5, 6, 7]))  # Output:6
 print(find_first_even([1, 3, 5]))        # Output:None
 
-# Return in Recursive Functions
+#7 Return in Recursive Functions
 def fibo(n):
     if n == 0:
         return 0
