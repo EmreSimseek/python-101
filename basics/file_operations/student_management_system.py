@@ -1,3 +1,4 @@
+
 student_list= []
 index = 0
 
@@ -5,6 +6,14 @@ def add_student():
     name=str(input("Enter student name:"))
     age =int(input("Enter student age:"))
     grade=int(input("Enter student grade:"))
+    
+    with open("student.txt","r") as file:
+        lines = file.readlines()
+    
+    for line in lines:
+        student_data = line.strip().split(",")
+        if student_data[0]==name:
+            print(f"Student {name} already exists in the list.")
     student_list.append([name, age, grade])
 
 def write_to_txt():
@@ -15,7 +24,12 @@ def write_to_txt():
     
     index+=1
 
+import os
 def print_student_list():
+    if not os.path.exists("student.txt"):
+        print("No students found. The file does not exist yet.")
+        return
+      
     file = open("student.txt", "r")
     lines = file.readlines()
     for line in lines:
@@ -23,6 +37,15 @@ def print_student_list():
     file.close()
 
 def update_student_grade(name,grade):
+    try:
+        grade = int(grade)
+        if grade < 0 or grade > 100:
+            print("Grade must be between 0 and 100")
+            return
+    except ValueError:
+        print("Invalid grade input. Please enter a number between 0 and 100")
+        return
+    
     found = False
     updated_students=[]
     
@@ -44,7 +67,30 @@ def update_student_grade(name,grade):
         print(f"{name}'s grade has been updated to {grade}.")
     else:
         print(f"Student named {name} not found.")
- 
+
+def delete_student(name):
+    found = False
+    
+    with open("student.txt","r") as file:
+        lines = file.readlines()
+    
+    updated_lines = []
+    
+    for line in lines:
+        student_data=line.strip().split(",")
+        if  student_data[0]==name:
+            #burada satırı silme işlemi yapılacak
+            found = True
+        else:
+            updated_lines.append(line)
+    
+    if found:
+        with open("student.txt", "w") as file:
+            file.writelines(updated_lines)                   
+        print(f"{name}'s has been deleted to list.")
+    else:
+        print(f"Student named {name} not found.")         
+
 def main():  
     
     
@@ -64,7 +110,9 @@ def main():
                 print_student_list()
                 print("------------------")
             case 4:
-                return 0
+                name = input("Enter the name of the student you want to delete:")
+                delete_student(name)
+                
             case 0:
                 return False        
                         
