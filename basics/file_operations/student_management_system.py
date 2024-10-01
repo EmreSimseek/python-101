@@ -10,14 +10,18 @@ def add_student():
     with open("student.txt","r") as file:
         lines = file.readlines()
     
-    for line in lines:
-        student_data = line.strip().split(",")
-        if student_data[0]==name:
-            print(f"Student {name} already exists in the list.")
+        for line in lines:
+            student_data = line.strip().split(",")
+            if student_data[0]==name:
+                print(f"Student {name} already exists in the list.")
+                return 
     student_list.append([name, age, grade])
 
 def write_to_txt():
     global index
+    
+    if index >= len(student_list):
+        return
     
     with open("student.txt", "a") as file:  # with kullanımı dosya işlemlerini daha güvenli yapar
             file.write(f"{student_list[index][0]},{student_list[index][1]},{student_list[index][2]}\n")
